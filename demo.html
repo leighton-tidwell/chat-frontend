@@ -1,0 +1,97 @@
+<html>
+  <title>@leighton-tidwell/chat-frontend Demo</title>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/chat.css" />
+    <script type="text/javascript" src="src/chat.js" defer></script>
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded", () => {
+        createChat({
+          containerID: "container",
+          threads: [
+            {
+              id: "thread-1",
+              name: "John Doe",
+              messages: [
+                {
+                  id: "message-1",
+                  from: "John Doe",
+                  text: "Hello",
+                  timestamp: new Date().toISOString(),
+                },
+                {
+                  id: "message-2",
+                  from: "John Doe",
+                  text: "How are you?",
+                  timestamp: new Date().toISOString(),
+                },
+                {
+                  id: "message-3",
+                  from: "Jane Doe",
+                  text: "I'm fine",
+                  timestamp: new Date().toISOString(),
+                },
+              ],
+            },
+            {
+              id: "thread-2",
+              name: "Dave Doe",
+              messages: [
+                {
+                  id: "message-1",
+                  from: "Jane Doe",
+                  text: "Hello",
+                  timestamp: new Date().toISOString(),
+                },
+                {
+                  id: "message-2",
+                  from: "Jane Doe",
+                  text: "How are you?",
+                  timestamp: new Date().toISOString(),
+                },
+                {
+                  id: "message-3",
+                  from: "Jane Doe",
+                  text: "I'm fine",
+                  timestamp: new Date().toISOString(),
+                },
+              ],
+            },
+            {
+              id: "thread-3",
+              name: "Jane Doe",
+              messages: [
+                {
+                  id: "message-1",
+                  from: "John Doe",
+                  text: "Hello",
+                  timestamp: new Date().toISOString(),
+                },
+                {
+                  id: "message-2",
+                  from: "John Doe",
+                  text: "How are you?",
+                  timestamp: new Date().toISOString(),
+                },
+                {
+                  id: "message-3",
+                  from: "Jane Doe",
+                  text: "I'm fine",
+                  timestamp: new Date().toISOString(),
+                },
+              ],
+            },
+          ],
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
