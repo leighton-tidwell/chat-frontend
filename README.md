@@ -4,12 +4,13 @@ As of now, this project is not fully functional. It's original intention was to 
 
 # How to initialize
 
-```javascript
+```html
+<link rel="stylesheet" href="src/chat.css" />
 <script type="text/javascript" src="src/chat.js" defer></script>
 <script type="text/javascript">
   window.addEventListener("DOMContentLoaded", () => {
-    createChat({})
-  })
+    createChat({});
+  });
 </script>
 ```
 
