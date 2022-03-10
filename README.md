@@ -14,7 +14,7 @@ As of now, this project is not fully functional. It's original intention was to 
 </script>
 ```
 
-The `createChat` function takes multiple arguments:
+The `Chat` constructor takes multiple arguments:
 
 | Argument        | Type       | Description                                                                                                                                                                                                                                     |
 | --------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,5 +24,11 @@ The `createChat` function takes multiple arguments:
 | `threads`       | `array`    | An array of objects containing information about the thread, including an array with all of the messages                                                                                                                                        |
 
 See `demo.html` for examples of how to use this.
+
+# Styling
+
+The CSS sheet for the basic styles applied are in `chat.css` and can be used as is, or modified to your liking.
+
+# Contribution
 
 If you have any suggestions or problems, feel free to make an issue.
