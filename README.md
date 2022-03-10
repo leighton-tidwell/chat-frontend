@@ -9,14 +9,20 @@ As of now, this project is not fully functional. It's original intention was to 
 <script type="text/javascript" src="src/chat.js" defer></script>
 <script type="text/javascript">
   window.addEventListener("DOMContentLoaded", () => {
-    createChat({});
+    const chat = new Chat({});
   });
 </script>
 ```
 
 The `createChat` function takes multiple arguments:
 
-- `containerID (STRING)` The ID of your container
-- `threads[]` An array of the threads that will show up in the chat. See `demo.html` for examples of how to use this.
+| Argument        | Type       | Description                                                                                                                                                                                                                                     |
+| --------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `containerID`   | `string`   | The ID of the container the chat box will live in.                                                                                                                                                                                              |
+| `currentUserID` | `string`   | The ID of the current user logged in.                                                                                                                                                                                                           |
+| `sendMessage`   | `function` | The function that will be called when a user attempts to send a message. This function will pass the `threadID` `from` `text` and `timestamp` to a function you provide and expect a return value of the new message ID and current users name. |
+| `threads`       | `array`    | An array of objects containing information about the thread, including an array with all of the messages                                                                                                                                        |
+
+See `demo.html` for examples of how to use this.
 
 If you have any suggestions or problems, feel free to make an issue.

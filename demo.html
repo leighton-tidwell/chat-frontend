@@ -10,9 +10,20 @@
     <link rel="stylesheet" href="src/chat.css" />
     <script type="text/javascript" src="src/chat.js" defer></script>
     <script type="text/javascript">
+      const postNewMessage = ({ threadID, from, text, timestamp }) =>
+        new Promise((resolve, reject) => {
+          // Process new message into database
+          console.log(threadID, from, text, timestamp);
+
+          // return new message ID and current users name
+          resolve(25, "Jane Doe");
+        });
+
       window.addEventListener("DOMContentLoaded", () => {
-        createChat({
+        const chat = new Chat({
           containerID: "container",
+          currentUserID: 1,
+          sendMessage: postNewMessage,
           threads: [
             {
               id: "thread-1",
@@ -20,19 +31,22 @@
               messages: [
                 {
                   id: "message-1",
-                  from: "John Doe",
+                  from: 2,
+                  name: "John Doe",
                   text: "Hello",
                   timestamp: new Date().toISOString(),
                 },
                 {
                   id: "message-2",
-                  from: "John Doe",
+                  from: 2,
+                  name: "John Doe",
                   text: "How are you?",
                   timestamp: new Date().toISOString(),
                 },
                 {
                   id: "message-3",
-                  from: "Jane Doe",
+                  from: 1,
+                  name: "Jane Doe",
                   text: "I'm fine",
                   timestamp: new Date().toISOString(),
                 },
@@ -40,54 +54,45 @@
             },
             {
               id: "thread-2",
-              name: "Dave Doe",
+              name: "Mark Adams",
               messages: [
                 {
                   id: "message-1",
-                  from: "Jane Doe",
-                  text: "Hello",
+                  from: 2,
+                  name: "Mark Adams",
+                  text: "This is another example",
                   timestamp: new Date().toISOString(),
                 },
                 {
                   id: "message-2",
-                  from: "Jane Doe",
-                  text: "How are you?",
+                  from: 2,
+                  name: "Mark Adams",
+                  text: "of multiple threads.. try replying below",
                   timestamp: new Date().toISOString(),
                 },
                 {
                   id: "message-3",
-                  from: "Jane Doe",
-                  text: "I'm fine",
-                  timestamp: new Date().toISOString(),
-                },
-              ],
-            },
-            {
-              id: "thread-3",
-              name: "Jane Doe",
-              messages: [
-                {
-                  id: "message-1",
-                  from: "John Doe",
-                  text: "Hello",
-                  timestamp: new Date().toISOString(),
-                },
-                {
-                  id: "message-2",
-                  from: "John Doe",
-                  text: "How are you?",
-                  timestamp: new Date().toISOString(),
-                },
-                {
-                  id: "message-3",
-                  from: "Jane Doe",
-                  text: "I'm fine",
+                  from: 1,
+                  name: "Jane Doe",
+                  text: "Okay!",
                   timestamp: new Date().toISOString(),
                 },
               ],
             },
           ],
         });
+
+        // how to add messages once recieved from the backend
+        setTimeout(() => {
+          chat.addMessage({
+            id: "message-5",
+            threadID: "thread-1",
+            from: 2,
+            name: "John Doe",
+            text: "This was sent 5 seconds late!",
+            timestamp: new Date().toISOString(),
+          });
+        }, 5000);
       });
     </script>
   </head>
