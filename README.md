@@ -1,6 +1,6 @@
 # Front end chat client
 
-As of now, this project is not fully functional. It's original intention was to be made for a friend who wanted a quick plug and play front end component to his chat.
+This project's original intention was to be made for a friend who wanted a quick plug and play front end component to his chat.
 
 # How to initialize
 
