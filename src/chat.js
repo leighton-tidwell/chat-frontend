@@ -210,4 +210,12 @@ class Chat {
     );
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
+
+  getThreads() {
+    return this.threads;
+  }
+
+  setThreads(threads) {
+    this.threads = threads;
+  }
 }
