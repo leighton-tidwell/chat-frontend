@@ -3,6 +3,7 @@ class Chat {
   containerID = [];
   currentUserID = null;
   selectedThread = null;
+  selectedThreadID = null;
   sendMessage = () => {};
 
   constructor({
@@ -90,6 +91,7 @@ class Chat {
       .querySelector(".chat-threads")
       .querySelector(`#${id}`);
     this.selectedThread.classList.add("selected");
+    this.selectThreadID = id;
 
     this.renderConversation({ id, name, messages });
 
@@ -196,8 +198,8 @@ class Chat {
             timestamp,
           },
         ];
-
-        this.renderMessage({ id, name, from, text, timestamp });
+        if (threadID === this.selectThreadID)
+          this.renderMessage({ id, name, from, text, timestamp });
       }
 
       return thread;
