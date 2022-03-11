@@ -123,6 +123,8 @@ class Chat {
 
     message.addEventListener("keypress", this.enterHandler);
     sendButton.addEventListener("click", this.clickHandler);
+
+    this.scrollToBottom();
   }
 
   processMessage({ threadID, from, text, timestamp }) {
@@ -205,6 +207,10 @@ class Chat {
       return thread;
     });
 
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
     const messagesContainer = document.querySelector(
       ".chat-conversation-messages"
     );
