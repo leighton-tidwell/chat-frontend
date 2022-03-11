@@ -102,7 +102,7 @@ class Chat {
     sendButton.removeEventListener("click", this.clickHandler);
 
     this.enterHandler = (e) => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter" && message.value.length > 0) {
         this.processMessage({
           threadID: id,
           from: this.currentUserID,
@@ -113,12 +113,14 @@ class Chat {
     };
 
     this.clickHandler = () => {
-      this.processMessage({
-        threadID: id,
-        from: this.currentUserID,
-        text: message.value,
-        timestamp: new Date().getTime(),
-      });
+      if (message.value.length > 0) {
+        this.processMessage({
+          threadID: id,
+          from: this.currentUserID,
+          text: message.value,
+          timestamp: new Date().getTime(),
+        });
+      }
     };
 
     message.addEventListener("keypress", this.enterHandler);
