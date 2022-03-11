@@ -31,7 +31,7 @@ The CSS sheet for the basic styles applied are in `chat.css` and can be used as 
 
 # Demo
 
-You can see a demo [https://leighton-tidwell.github.io/chat-frontend/](**here**).
+You can see a demo [**here**](https://leighton-tidwell.github.io/chat-frontend/).
 
 # Contribution
 
