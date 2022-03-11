@@ -29,6 +29,10 @@ See `index.html` for examples of how to use this.
 
 The CSS sheet for the basic styles applied are in `chat.css` and can be used as is, or modified to your liking.
 
+# Demo
+
+You can see a demo [https://leighton-tidwell.github.io/chat-frontend/](**here**).
+
 # Contribution
 
 If you have any suggestions or problems, feel free to make an issue.
