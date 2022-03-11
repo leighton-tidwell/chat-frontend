@@ -23,7 +23,7 @@ The `Chat` constructor takes multiple arguments:
 | `sendMessage`   | `function` | The function that will be called when a user attempts to send a message. This function will pass the `threadID` `from` `text` and `timestamp` to a function you provide and expect a return value of the new message ID and current users name. |
 | `threads`       | `array`    | An array of objects containing information about the thread, including an array with all of the messages                                                                                                                                        |
 
-See `demo.html` for examples of how to use this.
+See `index.html` for examples of how to use this.
 
 # Styling
 
